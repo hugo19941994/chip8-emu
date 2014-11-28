@@ -17,3 +17,6 @@ The only dependency is the SDL2 library.
 I compiled this project using MSVC 2013 but it may, however, work under other compilers.
 
 For now it only works with Windows, though a linux port is planned.
+
+##Screenshot
+![BRIX](https://raw.githubusercontent.com/hugo19941994/CHIP8-Emu/master/images/BRIX.png "BRIX")
