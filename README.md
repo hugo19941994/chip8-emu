@@ -12,11 +12,15 @@ The key bindings are:
     z x c v
 
 ##Compiling
-The only dependency is the SDL2 library.
+###Windows
+Dependencied: SDL2
 
-I compiled this project using MSVC 2013 but it may, however, work under other compilers.
+Open the project in Visual Studio and compile
+###Linux
+Dependencies: SDL2, GTK3
 
-For now it only works with Windows, though a linux port is planned.
+Compile using:
+g++ -o prog chip8.cpp main.cpp loader.cpp vars.h -I/usr/include/SDL2 -lSDL2main -lSDL2 \`pkg-config --cflags --libs gtk+-2.0\`
 
 ##Screenshot
 ![BRIX](https://raw.githubusercontent.com/hugo19941994/CHIP8-Emu/master/images/BRIX.png "BRIX")
