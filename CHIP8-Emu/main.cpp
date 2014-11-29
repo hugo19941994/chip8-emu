@@ -1,9 +1,16 @@
+#ifdef _WIN32
+#include <windows.h>
+#include <stdlib.h>
+#include <SDL.h>
+#endif
+#ifdef linux
+#include <cstdlib>
+#include <gtk/gtk.h>
+#include "SDL.h"
+#endif
 #include <stdio.h>
-//#include <stdlib.h>
 //#include <string.h>
 //#include <conio.h>
-//#include <windows.h>
-#include <SDL.h>
 #include "vars.h"
 
 //Screen dimension constants
@@ -78,6 +85,9 @@ int main(int argc, char* args[])
 		//Main loop flag
 		bool quit = false;
 		initialize();
+		#ifdef linux
+		gtk_init(&argc, &args);
+		#endif
 		loadgame();
 
 		//Event handler

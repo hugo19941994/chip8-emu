@@ -1,8 +1,14 @@
+#ifdef _WIN32
+#include <windows.h>
+#include <stdlib.h>
+#endif
+#ifdef linux
+#include <cstdlib>
+#include <gtk/gtk.h>
+#endif
 #include <stdio.h>
-//#include <stdlib.h>
 //#include <string.h>
 //#include <conio.h>
-#include <windows.h>
 #include "vars.h"
 
 //Current OpCode
@@ -55,18 +61,18 @@ unsigned char chip8_fontset[80] =
 void initialize(){
 	//Initialize Memory, registers
 	int iterator = 0;
-	while (iterator < 16){
+	while (iterator < 16){ //Zeroes registers
 		V[iterator] = 0;
 		iterator++;
 	}
 
 	iterator = 0;
-	while (iterator < 4096){
+	while (iterator < 4096){ //Zeroes memory
 		memory[iterator] = 0;
 		iterator++;
 	}
 
-	pc = 0x200;
+	pc = 0x200; //ROM starts at 0x200
 	opcode = 0;
 	I = 0;
 	sp = 0;
@@ -78,51 +84,6 @@ void initialize(){
 	// Reset timers
 	delay_timer = 60;
 	sound_timer = 60;
-}
-
-BOOL WINAPI GetOpenFileName(
-	_Inout_  LPOPENFILENAME lpofn
-	);
-
-char filename[100];
-
-// pick a program file
-INT ChooseProgram(PCHAR FileName)
-{
-	OPENFILENAME  ofn;
-	memset(&ofn, 0, sizeof(ofn));
-	ofn.lStructSize = sizeof(ofn);
-	ofn.hwndOwner = NULL;
-	ofn.hInstance = NULL;
-	ofn.lpstrFilter = "Chip8 ROMs\0*.ch8\0All Files\0*.*\0\0";
-	ofn.lpstrFile = FileName;
-	ofn.nMaxFile = MAX_PATH;
-	ofn.lpstrTitle = "Please Select A CHIP8 ROM";
-	ofn.Flags = OFN_NONETWORKBUTTON |
-		OFN_FILEMUSTEXIST |
-		OFN_HIDEREADONLY;
-	if (!GetOpenFileName(&ofn))
-		return(0);
-	return 1;
-}
-
-void loadgame(){
-	FILE *space;
-	ChooseProgram(filename);
-	if (fopen_s(&space, filename, "rb") != 0){ //Make optional
-		printf("failed");
-		exit(0);
-	}
-	fseek(space, 0, SEEK_END);
-	long bufferSize = ftell(space);
-	rewind(space);
-	unsigned char * buffer = (unsigned char *)malloc(sizeof(char) * bufferSize);
-	size_t result = fread(buffer, 1, bufferSize, space);
-	for (int i = 0; i < bufferSize; ++i){
-		memory[i + 512] = buffer[i];
-	}
-	fclose(space);
-	free(buffer);
 }
 
 void emulateCycle(){
