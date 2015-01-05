@@ -13,7 +13,7 @@ The key bindings are:
 
 ##Compiling
 ###Windows
-Dependencied: SDL2
+Dependencies: SDL2
 
 Open the project in Visual Studio and compile
 ###Linux
