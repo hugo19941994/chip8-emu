@@ -1,5 +1,8 @@
 # CHIP8-Emu
 
+[![license](https://img.shields.io/github/license/hugo19941994/chip8-emu.svg)](https://github.com/hugo19941994/chip8-emu/blob/master/LICENSE.md)
+[![Build Status](https://travis-ci.org/hugo19941994/chip8-emu.svg?branch=master)](https://travis-ci.org/hugo19941994/chip8-emu)
+
 A CHIP8 emulator written in C and SDL.
 
 ## Key Bindings
