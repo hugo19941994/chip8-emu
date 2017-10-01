@@ -15,11 +15,16 @@ The key bindings are:
 Dependencies: SDL2
 
 Open the project in Visual Studio and compile
-### Linux
+
+### Linux and MacOS
 Dependencies: SDL2, GTK3
 
 Compile using:
-g++ -o prog chip8.cpp main.cpp loader.cpp vars.h -I/usr/include/SDL2 -lSDL2main -lSDL2 \`pkg-config --cflags --libs gtk+-2.0\`
+
+```bash
+g++ chip8.cpp main.cpp loader.cpp vars.h `sdl2-config --cflags --libs` `pkg-config --cflags --libs gtk+-2.0`
+```
+
 
 ## Screenshot
 ![BRIX](https://raw.githubusercontent.com/hugo19941994/CHIP8-Emu/master/images/BRIX.png "BRIX")

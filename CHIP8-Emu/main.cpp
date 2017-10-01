@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <SDL.h>
 #endif
-#ifdef linux
+#if __linux__ || __APPLE__
 #include <cstdlib>
 #include <gtk/gtk.h>
 #include "SDL.h"
@@ -85,7 +85,7 @@ int main(int argc, char* args[])
 		//Main loop flag
 		bool quit = false;
 		initialize();
-		#ifdef linux
+        #if __linux__ || __APPLE__
 		gtk_init(&argc, &args);
 		#endif
 		loadgame();

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <SDL.h>
 #endif
-#ifdef linux
+#if __linux__ || __APPLE__
 #include <cstdlib>
 #include <gtk/gtk.h>
 #include "SDL.h"
@@ -60,7 +60,7 @@ void loadgame(){
 	free(buffer);
 }
 #endif
-#ifdef linux
+#if __linux__ || __APPLE__
 char *filename;
 
 void chooseProgram(){

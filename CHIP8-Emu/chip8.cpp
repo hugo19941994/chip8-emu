@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <stdlib.h>
 #endif
-#ifdef linux
+#if __linux__ || __APPLE__
 #include <cstdlib>
 #include <gtk/gtk.h>
 #endif
