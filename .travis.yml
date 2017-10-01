@@ -12,7 +12,7 @@ addons:
 before_install:
   - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
   - sudo apt-get update -qq
-  - sudo apt-get install -qq libsdl2-2.0
+  - sudo apt-get install -qq libsdl2-2.0 gtk2.0
   - sudo ln -s /usr/bin/gcc-7 /usr/local/bin/gcc
   - sudo ln -s /usr/bin/g++-7 /usr/local/bin/g++
   - export CC="gcc-7"

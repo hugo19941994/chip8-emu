@@ -20,7 +20,7 @@ Dependencies: SDL2
 Open the project in Visual Studio and compile
 
 ### Linux and MacOS
-Dependencies: SDL2, GTK3
+Dependencies: SDL2, GTK2
 
 Compile using:
 
