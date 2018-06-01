@@ -1,6 +1,6 @@
 # CHIP8-Emu
 
-[![Build Status](https://travis-ci.org/hugo19941994/chip8-emu.svg?branch=master)](https://travis-ci.org/hugo19941994/chip8-emu)
+[![Build Status](https://travis-ci.com/hugo19941994/chip8-emu.svg?branch=master)](https://travis-ci.com/hugo19941994/chip8-emu)
 
 A CHIP8 emulator written in C and SDL.
 
